@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: car
+  name: car
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: car
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: car
+    spec:
+      containers:
+      - image: ammyl/car
+        name: car
+        ports: 
+        - containerPort: 80  
+        resources: {}
+status: {}
